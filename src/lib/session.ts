@@ -1,15 +1,17 @@
+import readings from '../data/reading.json';
 import builtin from '../data/words.json';
 import { ALL_EXERCISES } from './storage';
-import type { ExerciseType, Progress, Settings, Word } from './types';
+import type { ExerciseType, Progress, Reading, Settings, Word } from './types';
 
 export const BUILTIN_WORDS = builtin as Word[];
+export const READINGS = readings as Reading[];
 
 export function allWords(p: Progress): Word[] {
   return [...p.customWords, ...BUILTIN_WORDS];
 }
 
 /** Words from chapters you haven't reached stay locked, so nothing is spoiled. */
-export function isUnlocked(w: Word, s: Settings): boolean {
+export function isUnlocked(w: { book: number; chapter?: number }, s: Settings): boolean {
   if (w.book !== s.book) return w.book < s.book;
   return (w.chapter ?? 0) <= s.chapter;
 }
@@ -89,8 +91,9 @@ export function buildOptions(
 
 export interface Step {
   key: string;
+  /** Word id, or reading id for `kind: 'reading'`. */
   wordId: string;
-  kind: 'intro' | 'exercise';
+  kind: 'intro' | 'exercise' | 'reading';
   exercise?: ExerciseType;
   isNew: boolean;
   /** Retries after a wrong answer don't change the schedule a second time. */
@@ -101,6 +104,20 @@ export interface SessionPlan {
   steps: Step[];
   reviewCount: number;
   newCount: number;
+  readingCount: number;
+}
+
+/** Unseen scenes first, then ones answered wrong on an earlier day. */
+export function readingsForToday(p: Progress, today: number): Reading[] {
+  const s = p.settings;
+  const doneToday = Object.values(p.readings).filter((r) => r.day === today).length;
+  const allowance = Math.max(0, s.readingPerDay - doneToday);
+  const open = READINGS.filter((r) => isUnlocked(r, s));
+  const unseen = open.filter((r) => !p.readings[r.id]);
+  const retry = open
+    .filter((r) => p.readings[r.id] && !p.readings[r.id].correct && p.readings[r.id].day < today)
+    .sort((a, b) => p.readings[a.id].day - p.readings[b.id].day);
+  return [...unseen, ...retry].slice(0, allowance);
 }
 
 export function newWordCandidates(p: Progress): Word[] {
@@ -169,7 +186,16 @@ export function buildSession(p: Progress, today: number, canSpeak: boolean, rng:
     }
   }
 
-  return { steps, reviewCount: steps.filter((x) => x.kind === 'exercise' && !x.isNew).length, newCount: news.length };
+  // Reading comes last, once the day's words are fresh in her head.
+  const reads = readingsForToday(p, today);
+  for (const r of reads) steps.push({ key: key(), wordId: r.id, kind: 'reading', isNew: false });
+
+  return {
+    steps,
+    reviewCount: steps.filter((x) => x.kind === 'exercise' && !x.isNew).length,
+    newCount: news.length,
+    readingCount: reads.length,
+  };
 }
 
 /** Extra practice when nothing is due: a random handful of words already learned. Doesn't change the schedule. */

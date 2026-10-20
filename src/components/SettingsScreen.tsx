@@ -55,6 +55,22 @@ export function SettingsScreen({ progress, onSettings, onReplace, onReset }: Pro
           </select>
         </label>
         <label className="row">
+          Reading scenes per day
+          <select value={s.readingPerDay} onChange={(e) => onSettings({ readingPerDay: Number(e.target.value) })}>
+            {[0, 1, 2, 3, 5].map((n) => (
+              <option key={n} value={n}>
+                {n === 0 ? 'Off' : n}
+              </option>
+            ))}
+          </select>
+          {progress.counters.byType.reading && (
+            <small className="hint">
+              Answered {progress.counters.byType.reading.answered}×, right{' '}
+              {Math.round((progress.counters.byType.reading.correct / progress.counters.byType.reading.answered) * 100)}%
+            </small>
+          )}
+        </label>
+        <label className="row">
           Book
           <select value={s.book} onChange={(e) => onSettings({ book: Number(e.target.value) })}>
             {[1, 2, 3, 4, 5, 6, 7].map((n) => (

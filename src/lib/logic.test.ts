@@ -1,6 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import { computeStats } from './achievements';
-import { BUILTIN_WORDS, buildOptions, buildSession, gapText, newWordCandidates, spokenText } from './session';
+import {
+  BUILTIN_WORDS,
+  buildOptions,
+  buildSession,
+  gapText,
+  newWordCandidates,
+  READINGS,
+  readingsForToday,
+  spokenText,
+} from './session';
 import { newCard, review } from './srs';
 import { defaultProgress } from './storage';
 
@@ -90,6 +99,43 @@ describe('daily session', () => {
   it('skips listening exercises when the phone cannot speak', () => {
     const plan = buildSession(defaultProgress(), 100, false, seeded(7));
     expect(plan.steps.some((s) => s.exercise?.startsWith('listen'))).toBe(false);
+  });
+});
+
+describe('reading', () => {
+  it('every scene is complete and has a valid answer', () => {
+    const ids = READINGS.map((r) => r.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const r of READINGS) {
+      expect(r.text && r.textCs && r.q && r.qCs, r.id).toBeTruthy();
+      expect(r.options, r.id).toHaveLength(4);
+      for (const o of r.options) expect(o.en && o.cs, r.id).toBeTruthy();
+      expect(new Set(r.options.map((o) => o.en)).size, r.id).toBe(4);
+      expect(r.answer, r.id).toBeGreaterThanOrEqual(0);
+      expect(r.answer, r.id).toBeLessThan(4);
+      expect(Boolean(r.why) === Boolean(r.whyCs), r.id).toBe(true);
+    }
+  });
+
+  it('adds scenes at the end of the session', () => {
+    const p = defaultProgress();
+    const plan = buildSession(p, 100, true, seeded());
+    expect(plan.readingCount).toBe(p.settings.readingPerDay);
+    expect(plan.steps.slice(-plan.readingCount).every((s) => s.kind === 'reading')).toBe(true);
+  });
+
+  it('brings back wrong answers on a later day, never right ones', () => {
+    const p = defaultProgress();
+    for (const r of READINGS) p.readings[r.id] = { day: 99, correct: true };
+    p.readings[READINGS[3].id] = { day: 99, correct: false };
+    expect(readingsForToday(p, 99)).toEqual([]);
+    expect(readingsForToday(p, 100).map((r) => r.id)).toEqual([READINGS[3].id]);
+  });
+
+  it('can be switched off', () => {
+    const p = defaultProgress();
+    p.settings.readingPerDay = 0;
+    expect(buildSession(p, 100, true, seeded()).readingCount).toBe(0);
   });
 });
 

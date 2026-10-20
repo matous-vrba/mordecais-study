@@ -15,6 +15,15 @@ The user will often send a list of words from a chapter, e.g. "book 1 ch 12: sku
 - Skip words already in the file (search `en` and `id`).
 - Run `npm test` and `npm run build`, then commit and push. Cloudflare Pages redeploys from `main`.
 
+## Adding reading scenes
+
+`src/data/reading.json` holds short comprehension exercises: 2–3 **original** sentences in the DCC style (e.g. Mordecai explaining something, Carl and Donut bickering, a System AI message), one question and four answers, all in English with Czech versions (`textCs`, `qCs`, each option's `cs`, `whyCs`).
+
+- The right answer needs understanding, not word matching. Make the wrong options plausible.
+- Vary which option index is right (`answer`); the app shuffles the order anyway.
+- `why` explains the answer in one simple sentence, quoting the key words from the text.
+- Set `chapter` when a scene relies on events from a specific chapter, so it stays locked until they get there.
+
 ## Conventions
 
 - UI copy: simple English, with a short Czech hint after a `·` where instructions matter.

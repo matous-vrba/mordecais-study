@@ -1,9 +1,10 @@
 import { useMemo, useRef, useState } from 'react';
-import { allWords, pickExercise, type Step } from '../lib/session';
+import { allWords, pickExercise, READINGS, type Step } from '../lib/session';
 import { markKnown, newCard, review } from '../lib/srs';
 import { speechSupported } from '../lib/speech';
 import type { DayLog, Grade, Progress } from '../lib/types';
 import { Exercise } from './Exercise';
+import { ReadingExercise } from './ReadingExercise';
 import { WordInfo } from './WordInfo';
 
 export interface SessionResult {
@@ -31,22 +32,46 @@ export function Session({ progress, steps: initial, practice, today, update, onF
   // The word list can't change while a session is open, so compute it once.
   const [words] = useState(() => allWords(progress));
   const byId = useMemo(() => new Map(words.map((w) => [w.id, w])), [words]);
+  const readingById = useMemo(() => new Map(READINGS.map((r) => [r.id, r])), []);
 
   // Refs, because an answer and "continue" can fire in the same tick.
-  const steps = useRef(initial.filter((s) => byId.has(s.wordId)));
+  const steps = useRef(initial.filter((s) => (s.kind === 'reading' ? readingById.has(s.wordId) : byId.has(s.wordId))));
   const tally = useRef({ answers: 0, mistakes: 0, newWords: 0 });
   const [index, setIndex] = useState(0);
   const [, rerender] = useState(0);
   const rng = Math.random;
 
-  const step = steps.current[index];
-  const word = step && byId.get(step.wordId);
-  if (!step || !word) return null;
-
   const advance = () => {
     if (index + 1 >= steps.current.length) onFinish({ ...tally.current, practice });
     else setIndex(index + 1);
   };
+
+  const step = steps.current[index];
+  if (!step) return null;
+
+  if (step.kind === 'reading') {
+    const reading = readingById.get(step.wordId)!;
+    const answerReading = (correct: boolean) => {
+      update((p) => {
+        const bt = (p.counters.byType.reading ??= { answered: 0, correct: 0 });
+        bt.answered++;
+        if (correct) bt.correct++;
+        p.readings[reading.id] = { day: today, correct };
+        if (correct) dayLog(p, today).correct++;
+      });
+      tally.current.answers++;
+      if (!correct) tally.current.mistakes++;
+    };
+    return (
+      <div className="session">
+        <SessionBar index={index} total={steps.current.length} onQuit={onQuit} />
+        <ReadingExercise key={step.key} reading={reading} onAnswer={answerReading} onContinue={advance} />
+      </div>
+    );
+  }
+
+  const word = byId.get(step.wordId);
+  if (!word) return null;
 
   const learn = (known: boolean) => {
     update((p) => {
@@ -96,22 +121,9 @@ export function Session({ progress, steps: initial, practice, today, update, onF
     }
   };
 
-  const total = steps.current.length;
-  const pct = Math.round((index / total) * 100);
-
   return (
     <div className="session">
-      <div className="session-bar">
-        <button className="link quit" onClick={onQuit} aria-label="Stop for now">
-          ✕
-        </button>
-        <div className="progress-track">
-          <div className="progress-fill" style={{ width: `${pct}%` }} />
-        </div>
-        <span className="count">
-          {index + 1}/{total}
-        </span>
-      </div>
+      <SessionBar index={index} total={steps.current.length} onQuit={onQuit} />
 
       {step.kind === 'intro' ? (
         <div className="intro" key={step.key}>
@@ -139,6 +151,23 @@ export function Session({ progress, steps: initial, practice, today, update, onF
           onContinue={advance}
         />
       )}
+    </div>
+  );
+}
+
+function SessionBar({ index, total, onQuit }: { index: number; total: number; onQuit: () => void }) {
+  const pct = Math.round((index / total) * 100);
+  return (
+    <div className="session-bar">
+      <button className="link quit" onClick={onQuit} aria-label="Stop for now">
+        ✕
+      </button>
+      <div className="progress-track">
+        <div className="progress-fill" style={{ width: `${pct}%` }} />
+      </div>
+      <span className="count">
+        {index + 1}/{total}
+      </span>
     </div>
   );
 }

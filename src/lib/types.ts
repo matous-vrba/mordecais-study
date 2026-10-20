@@ -21,6 +21,22 @@ export interface Word {
   custom?: boolean;
 }
 
+/** A short original scene plus a comprehension question. */
+export interface Reading {
+  id: string;
+  book: number;
+  chapter?: number;
+  text: string;
+  textCs: string;
+  q: string;
+  qCs: string;
+  options: { en: string; cs: string }[];
+  /** Index into `options` of the right answer. */
+  answer: number;
+  why?: string;
+  whyCs?: string;
+}
+
 export interface CardState {
   /** Day index (see dates.ts) when the card is next due. */
   due: number;
@@ -56,6 +72,8 @@ export interface Settings {
   chapter: number;
   newPerDay: number;
   maxReviews: number;
+  /** Reading exercises at the end of each daily session; 0 turns them off. */
+  readingPerDay: number;
   voiceURI?: string;
   rate: number;
   exercises: Record<ExerciseType, boolean>;
@@ -68,6 +86,8 @@ export interface Progress {
   settings: Settings;
   /** Keyed by day index. */
   days: Record<number, DayLog>;
+  /** Reading id -> last attempt. Wrong answers come back on a later day. */
+  readings: Record<string, { day: number; correct: boolean }>;
   /** Achievement id -> day index unlocked. */
   achievements: Record<string, number>;
   counters: {
@@ -75,6 +95,6 @@ export interface Progress {
     totalCorrect: number;
     totalAnswers: number;
     /** Per exercise type: how often it was answered, to see what she uses. */
-    byType: Partial<Record<ExerciseType, { answered: number; correct: number }>>;
+    byType: Partial<Record<ExerciseType | 'reading', { answered: number; correct: number }>>;
   };
 }

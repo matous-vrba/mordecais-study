@@ -1,5 +1,5 @@
 import { computeStats } from '../lib/achievements';
-import { dueWordIds, newAllowanceToday, newWordCandidates } from '../lib/session';
+import { dueWordIds, newAllowanceToday, newWordCandidates, readingsForToday } from '../lib/session';
 import type { Progress } from '../lib/types';
 
 interface Props {
@@ -14,6 +14,7 @@ export function Home({ progress, today, onStart, onPractice, onChangeChapter }: 
   const stats = computeStats(progress, today);
   const due = dueWordIds(progress, today).length;
   const fresh = Math.min(newWordCandidates(progress).length, newAllowanceToday(progress, today));
+  const reading = readingsForToday(progress, today).length;
   const finishedToday = progress.days[today]?.finished;
   const s = progress.settings;
 
@@ -42,10 +43,10 @@ export function Home({ progress, today, onStart, onPractice, onChangeChapter }: 
 
       <section className="panel today">
         <h2>Today's training · Dnešní trénink</h2>
-        {due + fresh > 0 ? (
+        {due + fresh + reading > 0 ? (
           <>
             <p>
-              <b>{due}</b> to review · <b>{fresh}</b> new words
+              <b>{due}</b> to review · <b>{fresh}</b> new words{reading > 0 && <> · <b>{reading}</b> reading</>}
             </p>
             <button className="btn primary wide big-btn" onClick={onStart}>
               {finishedToday ? 'Continue training' : 'Start training ⚔️'}

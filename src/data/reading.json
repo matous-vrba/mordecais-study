@@ -1,0 +1,376 @@
+[
+  {
+    "id": "r-safe-room-timer",
+    "book": 1,
+    "text": "\"Safe rooms are the only places where monsters can't follow you,\" Mordecai said. \"But don't get comfortable. The timer doesn't stop while you sleep.\"",
+    "textCs": "„Bezpečné místnosti jsou jediná místa, kam za vámi monstra nemůžou,“ řekl Mordecai. „Ale moc se tam nezabydlete. Odpočet se nezastaví, ani když spíte.“",
+    "q": "What does Mordecai warn Carl about?",
+    "qCs": "Před čím Mordecai Carla varuje?",
+    "options": [
+      { "en": "Monsters can enter safe rooms at night.", "cs": "Monstra můžou v noci vstoupit do bezpečných místností." },
+      { "en": "Time keeps running even when you rest.", "cs": "Čas běží dál, i když odpočíváte." },
+      { "en": "Safe rooms are very hard to find.", "cs": "Bezpečné místnosti se velmi těžko hledají." },
+      { "en": "Sleeping in a safe room costs money.", "cs": "Spaní v bezpečné místnosti stojí peníze." }
+    ],
+    "answer": 1,
+    "why": "\"The timer doesn't stop while you sleep\" means the time is still running out.",
+    "whyCs": "„Odpočet se nezastaví, ani když spíte“ znamená, že čas pořád ubíhá."
+  },
+  {
+    "id": "r-skills-practice",
+    "book": 1,
+    "text": "\"Your skills get better when you use them,\" Mordecai explained. \"Punch enough goblins, and your punching skill will go up on its own.\"",
+    "textCs": "„Vaše dovednosti se zlepšují, když je používáte,“ vysvětlil Mordecai. „Dejte pěstí dost goblinům a vaše dovednost úderu se zvýší sama.“",
+    "q": "How can Carl improve his punching skill?",
+    "qCs": "Jak může Carl zlepšit svou dovednost úderu?",
+    "options": [
+      { "en": "By reading a book about fighting.", "cs": "Přečtením knihy o boji." },
+      { "en": "By drinking a special potion.", "cs": "Vypitím zvláštního lektvaru." },
+      { "en": "By punching monsters a lot.", "cs": "Tím, že bude často bít monstra." },
+      { "en": "By asking Mordecai to teach him.", "cs": "Tím, že požádá Mordecaie, aby ho to naučil." }
+    ],
+    "answer": 2,
+    "why": "Skills get better \"when you use them\", so he has to punch a lot.",
+    "whyCs": "Dovednosti se zlepšují, „když je používáte“, takže musí hodně bojovat pěstmi."
+  },
+  {
+    "id": "r-stairs-close",
+    "book": 1,
+    "text": "\"When the timer reaches zero, the stairwells close,\" Mordecai said. \"Anyone still on this floor when that happens is dead. No second chances.\"",
+    "textCs": "„Když odpočet dojde na nulu, schodiště se zavřou,“ řekl Mordecai. „Kdo bude v tu chvíli pořád na tomhle patře, je mrtvý. Žádná druhá šance.“",
+    "q": "What happens to crawlers who don't reach the stairs in time?",
+    "qCs": "Co se stane crawlerům, kteří nedojdou ke schodům včas?",
+    "options": [
+      { "en": "They die.", "cs": "Zemřou." },
+      { "en": "They get extra time.", "cs": "Dostanou čas navíc." },
+      { "en": "They go back to the first floor.", "cs": "Vrátí se do prvního patra." },
+      { "en": "They lose all their loot.", "cs": "Přijdou o všechnu kořist." }
+    ],
+    "answer": 0,
+    "why": "\"Anyone still on this floor ... is dead.\"",
+    "whyCs": "„Kdo bude pořád na tomhle patře … je mrtvý.“"
+  },
+  {
+    "id": "r-box-size",
+    "book": 1,
+    "text": "Donut stared at her small bronze box. \"Why is mine smaller than Carl's?\" \"Because his achievement was harder,\" Mordecai said. \"Better achievements give better boxes.\"",
+    "textCs": "Donut zírala na svou malou bronzovou truhlu. „Proč je moje menší než Carlova?“ „Protože jeho úspěch byl těžší,“ řekl Mordecai. „Lepší úspěchy dávají lepší truhly.“",
+    "q": "Why did Carl get a better box than Donut?",
+    "qCs": "Proč dostal Carl lepší truhlu než Donut?",
+    "options": [
+      { "en": "Because he is older than Donut.", "cs": "Protože je starší než Donut." },
+      { "en": "Because Donut was rude to Mordecai.", "cs": "Protože Donut byla na Mordecaie hrubá." },
+      { "en": "Because he paid for it.", "cs": "Protože si za ni zaplatil." },
+      { "en": "Because he did something more difficult.", "cs": "Protože udělal něco těžšího." }
+    ],
+    "answer": 3,
+    "why": "\"His achievement was harder\": harder achievements give better boxes.",
+    "whyCs": "„Jeho úspěch byl těžší“: za těžší úspěchy jsou lepší truhly."
+  },
+  {
+    "id": "r-unknown-potions",
+    "book": 1,
+    "text": "\"Don't drink every potion you find,\" Mordecai said. \"Some will heal you, some will turn your skin blue, and some will kill you. Find out what it is first.\"",
+    "textCs": "„Nepijte každý lektvar, který najdete,“ řekl Mordecai. „Některé vás vyléčí, po některých vám zmodrá kůže a některé vás zabijí. Nejdřív zjistěte, co to je.“",
+    "q": "What is Mordecai's advice?",
+    "qCs": "Co Mordecai radí?",
+    "options": [
+      { "en": "Never drink any potions.", "cs": "Nikdy nepijte žádné lektvary." },
+      { "en": "Check what a potion does before you drink it.", "cs": "Než lektvar vypijete, zjistěte, co dělá." },
+      { "en": "Blue potions are the best ones.", "cs": "Modré lektvary jsou nejlepší." },
+      { "en": "Drink potions as soon as you find them.", "cs": "Pijte lektvary hned, jak je najdete." }
+    ],
+    "answer": 1,
+    "why": "He doesn't say \"never\". He says \"find out what it is first\".",
+    "whyCs": "Neříká „nikdy“. Říká „nejdřív zjistěte, co to je“."
+  },
+  {
+    "id": "r-pulled-aggro",
+    "book": 1,
+    "text": "Carl threw a rock at the goblin on the left. Every goblin in the room turned to look at him. \"Great,\" he muttered. \"Now they all want to kill me.\"",
+    "textCs": "Carl hodil kámen po goblinovi vlevo. Všichni goblini v místnosti se otočili a podívali se na něj. „Skvělý,“ zamumlal. „Teď mě chtějí zabít všichni.“",
+    "q": "What went wrong?",
+    "qCs": "Co se pokazilo?",
+    "options": [
+      { "en": "The rock missed the goblin.", "cs": "Kámen goblina minul." },
+      { "en": "The goblins ran away.", "cs": "Goblini utekli." },
+      { "en": "Attacking one goblin made all of them angry.", "cs": "Útok na jednoho goblina rozzuřil všechny." },
+      { "en": "Carl hurt his hand.", "cs": "Carl si poranil ruku." }
+    ],
+    "answer": 2,
+    "why": "He attacked only one, but \"every goblin\" turned to him. \"Great\" is sarcastic here.",
+    "whyCs": "Zaútočil jen na jednoho, ale otočili se „všichni goblini“. „Skvělý“ je tu sarkasticky."
+  },
+  {
+    "id": "r-viewers-gifts",
+    "book": 1,
+    "text": "\"The viewers love drama,\" Mordecai explained. \"If they find you boring, you get nothing. If they love you, they might send you gifts.\"",
+    "textCs": "„Diváci milují drama,“ vysvětlil Mordecai. „Když vás považují za nudné, nedostanete nic. Když si vás zamilují, možná vám pošlou dárky.“",
+    "q": "How can a crawler get gifts?",
+    "qCs": "Jak může crawler dostat dárky?",
+    "options": [
+      { "en": "By being interesting to watch.", "cs": "Tím, že je zajímavý na sledování." },
+      { "en": "By asking the viewers politely.", "cs": "Tím, že diváky slušně požádá." },
+      { "en": "By hiding from the cameras.", "cs": "Tím, že se schová před kamerami." },
+      { "en": "By finishing the floor quickly.", "cs": "Tím, že rychle dokončí patro." }
+    ],
+    "answer": 0,
+    "why": "Boring crawlers get nothing; crawlers the viewers love can get gifts.",
+    "whyCs": "Nudní crawleři nedostanou nic; ti, které diváci milují, můžou dostat dárky."
+  },
+  {
+    "id": "r-cooldown",
+    "book": 1,
+    "text": "\"The spell is strong, but it has a long cooldown,\" Mordecai said. \"Use it once, and you'll wait ten minutes before you can use it again. So don't waste it.\"",
+    "textCs": "„To kouzlo je silné, ale dlouho se obnovuje,“ řekl Mordecai. „Jednou ho použijete a pak deset minut počkáte, než ho budete moct použít znovu. Tak ho neplýtvejte.“",
+    "q": "What is the problem with the spell?",
+    "qCs": "Jaký je s tím kouzlem problém?",
+    "options": [
+      { "en": "It is very weak.", "cs": "Je velmi slabé." },
+      { "en": "It hurts the person who uses it.", "cs": "Zraňuje toho, kdo ho použije." },
+      { "en": "It only works for ten minutes.", "cs": "Funguje jen deset minut." },
+      { "en": "You can't use it again quickly.", "cs": "Nejde ho rychle použít znovu." }
+    ],
+    "answer": 3,
+    "why": "A cooldown is the waiting time before you can use it again: here, ten minutes.",
+    "whyCs": "Cooldown je doba čekání, než ho můžeš použít znovu: tady deset minut."
+  },
+  {
+    "id": "r-sewer-smell",
+    "book": 1,
+    "text": "\"Carl, you smell terrible,\" Donut said. \"I've been walking through a sewer for two hours,\" Carl said. \"What did you expect? Roses?\"",
+    "textCs": "„Carle, strašně smrdíš,“ řekla Donut. „Dvě hodiny jsem šel kanalizací,“ řekl Carl. „Co jsi čekala? Růže?“",
+    "q": "Why does Carl smell bad?",
+    "qCs": "Proč Carl smrdí?",
+    "options": [
+      { "en": "He has not had a bath for two weeks.", "cs": "Dva týdny se nekoupal." },
+      { "en": "He has been in a dirty underground tunnel.", "cs": "Byl ve špinavém podzemním tunelu." },
+      { "en": "He fell into a box of old roses.", "cs": "Spadl do krabice se starými růžemi." },
+      { "en": "Donut is only joking.", "cs": "Donut si jen dělá legraci." }
+    ],
+    "answer": 1,
+    "why": "A sewer is an underground tunnel for dirty water. \"Roses?\" is a joke: roses smell nice.",
+    "whyCs": "Kanalizace je podzemní tunel na špinavou vodu. „Růže?“ je vtip: růže voní hezky."
+  },
+  {
+    "id": "r-collapse-warning",
+    "book": 1,
+    "text": "A message appeared in front of every crawler: \"Warning! This floor will collapse in twelve hours. If you have not found a stairwell yet, you should hurry. Good luck! Or not.\"",
+    "textCs": "Před každým crawlerem se objevila zpráva: „Varování! Toto patro se za dvanáct hodin zřítí. Pokud jste ještě nenašli schodiště, měli byste si pospíšit. Hodně štěstí! Nebo taky ne.“",
+    "q": "What should crawlers do now?",
+    "qCs": "Co by teď crawleři měli udělat?",
+    "options": [
+      { "en": "Wait twelve hours in a safe room.", "cs": "Počkat dvanáct hodin v bezpečné místnosti." },
+      { "en": "Go back up to the surface.", "cs": "Vrátit se nahoru na povrch." },
+      { "en": "Find a way down to the next floor soon.", "cs": "Brzy najít cestu dolů do dalšího patra." },
+      { "en": "Send a message for help.", "cs": "Poslat zprávu s prosbou o pomoc." }
+    ],
+    "answer": 2,
+    "why": "The floor will collapse, so they must find a stairwell (the way down) and hurry.",
+    "whyCs": "Patro se zřítí, takže musí najít schodiště (cestu dolů) a pospíšit si."
+  },
+  {
+    "id": "r-dangerous-ones",
+    "book": 1,
+    "text": "\"Everybody thinks the biggest monster is the most dangerous,\" Mordecai said. \"Wrong. The one that kills you is usually the one you didn't notice.\"",
+    "textCs": "„Každý si myslí, že největší monstrum je to nejnebezpečnější,“ řekl Mordecai. „Omyl. To, které vás zabije, je obvykle to, kterého jste si nevšimli.“",
+    "q": "What does Mordecai mean?",
+    "qCs": "Co tím Mordecai myslí?",
+    "options": [
+      { "en": "Small or hidden monsters can be the most dangerous.", "cs": "Malá nebo skrytá monstra můžou být nejnebezpečnější." },
+      { "en": "Big monsters are never dangerous.", "cs": "Velká monstra nejsou nikdy nebezpečná." },
+      { "en": "Carl should always fight the biggest monster first.", "cs": "Carl by měl vždycky bojovat nejdřív s největším monstrem." },
+      { "en": "Monsters can't see you if you are quiet.", "cs": "Monstra tě nevidí, když jsi potichu." }
+    ],
+    "answer": 0,
+    "why": "He says the danger is the monster \"you didn't notice\", not that big ones are safe.",
+    "whyCs": "Říká, že nebezpečné je monstrum, „kterého jste si nevšimli“, ne že velká jsou bezpečná."
+  },
+  {
+    "id": "r-boots",
+    "book": 1,
+    "text": "Carl looked down at his bare feet. They were black with dirt and blood. \"The first thing I'm buying,\" he said, \"is a pair of boots.\"",
+    "textCs": "Carl se podíval na svá bosá chodidla. Byla černá od špíny a krve. „První věc, kterou si koupím,“ řekl, „jsou boty.“",
+    "q": "What does Carl want most right now?",
+    "qCs": "Co Carl teď chce nejvíc?",
+    "options": [
+      { "en": "A better weapon.", "cs": "Lepší zbraň." },
+      { "en": "Something to eat.", "cs": "Něco k jídlu." },
+      { "en": "A bath.", "cs": "Koupel." },
+      { "en": "Something to wear on his feet.", "cs": "Něco na nohy." }
+    ],
+    "answer": 3,
+    "why": "\"The first thing I'm buying is a pair of boots\": boots go on your feet.",
+    "whyCs": "„První věc, kterou si koupím, jsou boty“: boty se nosí na nohou."
+  },
+  {
+    "id": "r-inventory",
+    "book": 1,
+    "text": "\"You can't carry everything in your hands,\" Mordecai said. \"Put it in your inventory. Things there don't feel heavy, and nobody can steal them from you.\"",
+    "textCs": "„Nemůžete všechno nosit v rukou,“ řekl Mordecai. „Dejte to do inventáře. Věci v něm nejsou těžké a nikdo vám je nemůže ukrást.“",
+    "q": "Why is the inventory useful?",
+    "qCs": "Proč je inventář užitečný?",
+    "options": [
+      { "en": "It makes your items stronger.", "cs": "Dělá tvé předměty silnějšími." },
+      { "en": "Items in it are light and safe.", "cs": "Věci v něm jsou lehké a v bezpečí." },
+      { "en": "It heals you when you are hurt.", "cs": "Vyléčí tě, když jsi zraněný." },
+      { "en": "It lets you sell items to the viewers.", "cs": "Umožňuje prodávat věci divákům." }
+    ],
+    "answer": 1,
+    "why": "Two reasons: things \"don't feel heavy\" and \"nobody can steal them\".",
+    "whyCs": "Dva důvody: věci „nejsou těžké“ a „nikdo je nemůže ukrást“."
+  },
+  {
+    "id": "r-charisma",
+    "book": 1,
+    "text": "\"I put all my points into charisma,\" Donut said proudly. \"Charisma? We're fighting monsters, Donut,\" Carl said. \"Yes,\" said Donut, \"and I intend to look fabulous doing it.\"",
+    "textCs": "„Všechny body jsem dala do charismatu,“ řekla Donut hrdě. „Do charismatu? Bojujeme s monstry, Donut,“ řekl Carl. „Ano,“ řekla Donut, „a hodlám u toho vypadat báječně.“",
+    "q": "Why did Donut choose charisma?",
+    "qCs": "Proč si Donut vybrala charisma?",
+    "options": [
+      { "en": "Mordecai told her to.", "cs": "Řekl jí to Mordecai." },
+      { "en": "She made a mistake.", "cs": "Udělala chybu." },
+      { "en": "She cares a lot about how she looks.", "cs": "Hodně jí záleží na tom, jak vypadá." },
+      { "en": "It makes her better at fighting.", "cs": "Díky tomu lépe bojuje." }
+    ],
+    "answer": 2,
+    "why": "She wants to \"look fabulous\": she cares about her image, not about fighting.",
+    "whyCs": "Chce „vypadat báječně“: záleží jí na tom, jak vypadá, ne na boji."
+  },
+  {
+    "id": "r-level-up-heal",
+    "book": 1,
+    "text": "\"Leveling up heals you a little, but don't count on it,\" Mordecai said. \"Crawlers who wait for a level-up to save them usually end up dead.\"",
+    "textCs": "„Postup na vyšší úroveň vás trochu vyléčí, ale nespoléhejte na to,“ řekl Mordecai. „Crawleři, kteří čekají, že je zachrání postup na další úroveň, obvykle skončí mrtví.“",
+    "q": "What is Mordecai's message?",
+    "qCs": "Co chce Mordecai říct?",
+    "options": [
+      { "en": "Don't depend on leveling up to survive.", "cs": "Nespoléhej na postup na vyšší úroveň, abys přežil." },
+      { "en": "Leveling up heals you completely.", "cs": "Postup na vyšší úroveň tě úplně vyléčí." },
+      { "en": "Dead crawlers can still level up.", "cs": "Mrtví crawleři můžou pořád postupovat na vyšší úroveň." },
+      { "en": "You should avoid leveling up.", "cs": "Měl by ses vyhýbat postupu na vyšší úroveň." }
+    ],
+    "answer": 0,
+    "why": "\"Don't count on it\" means \"don't depend on it\".",
+    "whyCs": "„Don't count on it“ znamená „nespoléhej na to“."
+  },
+  {
+    "id": "r-duck-knife",
+    "book": 1,
+    "text": "The goblin lunged at him with a knife, and Carl ducked. The blade flew over his head and stuck in the wall behind him.",
+    "textCs": "Goblin se na něj vrhl s nožem a Carl se skrčil. Čepel mu přeletěla nad hlavou a zasekla se do zdi za ním.",
+    "q": "What happened to Carl?",
+    "qCs": "Co se stalo Carlovi?",
+    "options": [
+      { "en": "The knife cut his head.", "cs": "Nůž ho řízl do hlavy." },
+      { "en": "He caught the knife.", "cs": "Chytil nůž." },
+      { "en": "He threw the knife at the wall.", "cs": "Hodil nůž do zdi." },
+      { "en": "He avoided the knife by getting lower.", "cs": "Vyhnul se noži tím, že se sehnul." }
+    ],
+    "answer": 3,
+    "why": "To \"duck\" is to lower your head quickly. The knife went \"over his head\", so it missed.",
+    "whyCs": "„Duck“ znamená rychle sklonit hlavu. Nůž letěl „nad jeho hlavou“, takže ho minul."
+  },
+  {
+    "id": "r-clean-door",
+    "book": 1,
+    "text": "\"I'm pretty sure that door is a trap,\" Carl said. \"Look at it. It's the only clean thing in this whole disgusting hallway.\"",
+    "textCs": "„Jsem si docela jistý, že ty dveře jsou past,“ řekl Carl. „Podívej se na ně. Jsou jediná čistá věc v celé téhle odporné chodbě.“",
+    "q": "Why does Carl think the door is a trap?",
+    "qCs": "Proč si Carl myslí, že dveře jsou past?",
+    "options": [
+      { "en": "Mordecai told him about it.", "cs": "Řekl mu o tom Mordecai." },
+      { "en": "It looks different from everything around it.", "cs": "Vypadá jinak než všechno kolem." },
+      { "en": "He heard a noise behind it.", "cs": "Slyšel za nimi nějaký zvuk." },
+      { "en": "The door is locked.", "cs": "Dveře jsou zamčené." }
+    ],
+    "answer": 1,
+    "why": "Everything else is disgusting; only the door is clean. That is suspicious.",
+    "whyCs": "Všechno ostatní je odporné, jen dveře jsou čisté. To je podezřelé."
+  },
+  {
+    "id": "r-dont-be-stupid",
+    "book": 1,
+    "text": "Mordecai snorted. \"You want to know the secret to surviving? Don't be stupid. Most crawlers don't die because the monsters are strong. They die because they do something stupid.\"",
+    "textCs": "Mordecai si odfrkl. „Chcete znát tajemství přežití? Nebuďte hloupí. Většina crawlerů neumírá proto, že by monstra byla silná. Umírají, protože udělají něco hloupého.“",
+    "q": "According to Mordecai, why do most crawlers die?",
+    "qCs": "Proč podle Mordecaie umírá většina crawlerů?",
+    "options": [
+      { "en": "The monsters are too strong.", "cs": "Monstra jsou příliš silná." },
+      { "en": "They don't have good weapons.", "cs": "Nemají dobré zbraně." },
+      { "en": "They make bad decisions.", "cs": "Špatně se rozhodují." },
+      { "en": "They run out of food.", "cs": "Dojde jim jídlo." }
+    ],
+    "answer": 2,
+    "why": "He says it is NOT because the monsters are strong, but because crawlers \"do something stupid\".",
+    "whyCs": "Říká, že to NENÍ kvůli síle monster, ale proto, že crawleři „udělají něco hloupého“."
+  },
+  {
+    "id": "r-rest-rats",
+    "book": 1,
+    "text": "\"Can we rest for a minute?\" Carl asked. \"We rested an hour ago!\" said Donut. \"Yeah, and then forty rats chased us through a sewer. I'm exhausted.\"",
+    "textCs": "„Můžeme si na chvilku odpočinout?“ zeptal se Carl. „Odpočívali jsme před hodinou!“ řekla Donut. „Jo, a pak nás čtyřicet krys honilo kanalizací. Jsem úplně vyčerpaný.“",
+    "q": "Why does Carl want to rest again?",
+    "qCs": "Proč si chce Carl znovu odpočinout?",
+    "options": [
+      { "en": "He is very tired after running from the rats.", "cs": "Je hodně unavený, protože utíkal před krysami." },
+      { "en": "He is hungry.", "cs": "Má hlad." },
+      { "en": "He wants to talk to Mordecai.", "cs": "Chce mluvit s Mordecaiem." },
+      { "en": "Donut asked him to stop.", "cs": "Donut ho požádala, aby zastavil." }
+    ],
+    "answer": 0,
+    "why": "\"Exhausted\" means extremely tired, because the rats chased them.",
+    "whyCs": "„Exhausted“ znamená strašně unavený, protože je honily krysy."
+  },
+  {
+    "id": "r-cockroach-achievement",
+    "book": 1,
+    "text": "\"New achievement! You stepped on a cockroach with your bare foot. Gross. Reward: nothing. Did you really expect a prize for that?\"",
+    "textCs": "„Nový úspěch! Šlápl jsi bosou nohou na švába. Fuj. Odměna: nic. Opravdu jsi za to čekal cenu?“",
+    "q": "What is the tone of this message?",
+    "qCs": "Jaký tón má tato zpráva?",
+    "options": [
+      { "en": "It is a serious warning.", "cs": "Je to vážné varování." },
+      { "en": "It is sad and kind.", "cs": "Je smutná a laskavá." },
+      { "en": "It is angry and scary.", "cs": "Je naštvaná a děsivá." },
+      { "en": "It is making fun of Carl.", "cs": "Dělá si z Carla legraci." }
+    ],
+    "answer": 3,
+    "why": "\"Gross\" and \"Did you really expect a prize?\" are teasing. The system is laughing at him.",
+    "whyCs": "„Fuj“ a „Opravdu jsi čekal cenu?“ je posměch. Systém se mu směje."
+  },
+  {
+    "id": "r-on-your-own",
+    "book": 1,
+    "text": "\"The guild can teach you, but it can't fight for you,\" Mordecai said. \"When you walk out that door, you're on your own.\"",
+    "textCs": "„Cech vás může učit, ale nemůže za vás bojovat,“ řekl Mordecai. „Až vyjdete těmi dveřmi, jste sami za sebe.“",
+    "q": "What does Mordecai mean?",
+    "qCs": "Co tím Mordecai myslí?",
+    "options": [
+      { "en": "He will come with them to help.", "cs": "Půjde s nimi a pomůže jim." },
+      { "en": "Outside, they must survive without his help.", "cs": "Venku musí přežít bez jeho pomoci." },
+      { "en": "The guild is closing forever.", "cs": "Cech se navždy zavírá." },
+      { "en": "The door is dangerous to touch.", "cs": "Dotknout se dveří je nebezpečné." }
+    ],
+    "answer": 1,
+    "why": "\"You're on your own\" means nobody will help you.",
+    "whyCs": "„You're on your own“ znamená, že ti nikdo nepomůže."
+  },
+  {
+    "id": "r-open-later",
+    "book": 1,
+    "text": "Carl wanted to open the box right away, but Donut stopped him. \"Wait until we're in a safe room,\" she said. \"If there's something good inside, I don't want a goblin to grab it.\"",
+    "textCs": "Carl chtěl truhlu otevřít hned, ale Donut ho zastavila. „Počkej, až budeme v bezpečné místnosti,“ řekla. „Jestli je uvnitř něco dobrého, nechci, aby to popadl nějaký goblin.“",
+    "q": "Why does Donut want to wait?",
+    "qCs": "Proč chce Donut počkat?",
+    "options": [
+      { "en": "She wants to open it herself.", "cs": "Chce ji otevřít sama." },
+      { "en": "She thinks the box is a trap.", "cs": "Myslí si, že truhla je past." },
+      { "en": "She wants to keep the loot safe.", "cs": "Chce mít kořist v bezpečí." },
+      { "en": "She is too tired.", "cs": "Je moc unavená." }
+    ],
+    "answer": 2,
+    "why": "She doesn't want a goblin to \"grab\" (take) the good things.",
+    "whyCs": "Nechce, aby ty dobré věci nějaký goblin „popadl“ (vzal)."
+  }
+]

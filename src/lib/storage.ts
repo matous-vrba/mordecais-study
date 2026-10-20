@@ -22,10 +22,12 @@ export function defaultProgress(): Progress {
       chapter: 11,
       newPerDay: 8,
       maxReviews: 40,
+      readingPerDay: 2,
       rate: 0.85,
       exercises: Object.fromEntries(ALL_EXERCISES.map((e) => [e, true])) as Record<ExerciseType, boolean>,
     },
     days: {},
+    readings: {},
     achievements: {},
     counters: { listenCorrect: 0, totalCorrect: 0, totalAnswers: 0, byType: {} },
   };
